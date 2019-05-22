@@ -17,8 +17,8 @@ export default class ProductList extends Component {
           <Title name="our" title="products" />
           <div className="row" >
             <ProductConsumer>
-              {(hello)=>{
-                return <h1>{hello}</h1>
+              {value=>{
+                console.log(value);
               }}
             </ProductConsumer>
           </div>
@@ -29,3 +29,4 @@ export default class ProductList extends Component {
     )
   }
 }
+//1.48

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {storeProducts, datailProduct} from '../data';
+import {storeProducts, detailProduct} from '../data';
 const ProductContext= React.createContext();
 // provider
 
@@ -8,7 +8,7 @@ const ProductContext= React.createContext();
  class ProductProvider extends Component {
    state={
      products: storeProducts,
-     detailProduct: datailProduct
+     detailProduct: detailProduct
    }
    handleDetail = ()=>{
      console.log("helo from detail")
