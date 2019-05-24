@@ -31,4 +31,3 @@ export default class ProductList extends Component {
     )
   }
 }
-//1.48
