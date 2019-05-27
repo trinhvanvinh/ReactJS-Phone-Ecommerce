@@ -8,6 +8,9 @@ export default class Details extends Component {
     return (
       <ProductConsumer>
         {value=>{
+          var a= Math.round(Date.parse("19:20:44") / 1000)
+          console.log("dasd "+a);
+
           const {id, company, img, info, price, title, inCart} = value.detailProduct; 
           return(
             <div className="container py-5" >
@@ -54,6 +57,7 @@ export default class Details extends Component {
                         disabled={inCart?true:false}
                         onClick={()=>{
                           value.addToCart(id);
+                          value.openModal(id);
                         }}
                       >
                         {inCart?"inCar":"add to cart"}
