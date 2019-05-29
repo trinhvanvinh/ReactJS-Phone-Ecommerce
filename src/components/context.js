@@ -1,20 +1,14 @@
-import React, {
-  Component
-} from 'react';
-import {
-  storeProducts,
-  detailProduct
-} from '../data';
+import React, { Component} from 'react';
+import {storeProducts,detailProduct} from '../data';
 const ProductContext = React.createContext();
 // provider
-
 //comsumer
 
 class ProductProvider extends Component {
   state = {
     products: [],
     detailProduct: detailProduct,
-    cart:[],
+    cart:storeProducts,
     modalOpen: true,
     modalProduct: detailProduct,
     cartSubTotal:0,
