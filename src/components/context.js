@@ -58,7 +58,7 @@ class ProductProvider extends Component {
         ]
       };
     },()=>{
-
+        this.addTotals();
     });
 
   }
@@ -102,7 +102,28 @@ class ProductProvider extends Component {
   }
 
   clearCart=()=>{
-    console.log('cart was cleared')
+    this.setState(()=>{
+      return {
+        cart:[]
+      }
+    },()=>{
+
+    });
+  }
+
+  addTotals=()=>{
+    let subToTal=0;
+    this.state.cart.map(item=>(subToTal +=item.total ));
+    const tempTax=subToTal*0.1;
+    const tax=parseFloat(tempTax.toFixed(2));
+    const total=subToTal+tax;
+    this.setState(()=>{
+      return {
+        cartSubTotal:subToTal,
+        cartTax: tax,
+        cartTotal: total
+      }
+    })
   }
 
   render() {
